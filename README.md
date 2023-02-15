@@ -2,7 +2,7 @@
 An open-source prometheus exporter for nsx-T 3.x.x
 
 # Utilisation
-Exporter is exposing metrics at : http://localhost:7789/
+Exporter is exposing metrics at : http://localhost:PortNumber/
 You can change the port in the YAML file.
 There is some metrics about the python process itslef, but the most importants metrics are tagged by "NSXv3" at the begining.
 
