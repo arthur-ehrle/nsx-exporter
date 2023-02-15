@@ -1,4 +1,4 @@
-# Nsx-exporter
+# NSX-exporter
 An open-source prometheus exporter for nsx-T 3.x.x
 
 # Utilisation
