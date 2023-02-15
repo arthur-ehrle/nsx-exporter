@@ -7,7 +7,6 @@ from prometheus_client.core import GaugeMetricFamily, REGISTRY, CounterMetricFam
 from prometheus_client import start_http_server
 import api
 
-totalRandomNumber = 0
 class result_count_request(object):
     def __init__(self):
         pass

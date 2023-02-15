@@ -23,13 +23,10 @@ if path.exists('config.yml'):
 
 def request_agent(URL):
     requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
-
     # sending get request and saving the response as response object HTTPBasicAuth(user, password)
-    r = requests.get(url=URL,auth=(user,password),verify=False )
-
+    r = requests.get(url=URL,auth=(user,password),verify=False )   
     # extracting data in json format
-    data = r.json()
-
+    data = r.json()      
     return data
 
 def result_count_request():
