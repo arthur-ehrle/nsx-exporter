@@ -36,7 +36,6 @@ def result_count_request():
     data_list = []
     for URL in url_list:
         data = request_agent(URL)
-        print(data)
         data_list.append(data['result_count'])
     return data_list, url_list, url_name
 

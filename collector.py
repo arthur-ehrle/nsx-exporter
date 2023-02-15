@@ -16,9 +16,9 @@ class result_count_request(object):
         for URL in url_list:
             index = url_list.index(URL)
             gauge = GaugeMetricFamily(f"{label}_{url_name[index]}", f"{url_name[index]}", labels=[f"{url_name[index]}"])
-            val = int(api.logical_router())
+            val = int(data_list[index])
             gauge.add_metric([f'{url_name[index]}'], data_list[index])
-        yield gauge
+            yield gauge
 
 
 if __name__ == "__main__":
