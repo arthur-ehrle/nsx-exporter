@@ -22,6 +22,7 @@ class result_count_request(object):
 
 if __name__ == "__main__":
     if path.exists('config.yml'):
+        print("Config file loaded correctly \n")
         with open('config.yml', 'r') as config_file:
             try:
                 config = yaml.safe_load(config_file)
@@ -30,7 +31,7 @@ if __name__ == "__main__":
                 label = config['label']
             except yaml.YAMLError as error:
                 print(error)
-
+    print(f"HTTP server started correctly on port {port} \n")
     start_http_server(port)
     REGISTRY.register(result_count_request())
     while True: 
