@@ -1,0 +1,8 @@
+port: 7789
+scrape_frequency: 1
+user : "login"
+password : "password!"
+label : "NSXv3"
+url_list : 
+  - link : "https://ip"
+    name : "metric_name"

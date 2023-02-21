@@ -21,9 +21,9 @@ class result_count_request(object):
 
 
 if __name__ == "__main__":
-    if path.exists('config.yml'):
+    if path.exists('config/config.yml'):
         print("Config file loaded correctly \n")
-        with open('config.yml', 'r') as config_file:
+        with open('config/config.yml', 'r') as config_file:
             try:
                 config = yaml.safe_load(config_file)
                 port = int(config['port'])

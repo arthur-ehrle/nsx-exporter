@@ -9,8 +9,8 @@ import yaml
 # doc for API url : https://developer.vmware.com/apis/1083/nsx-t
 url_list=[]
 url_name = []
-if path.exists('config.yml'):
-    with open('config.yml', 'r') as config_file:
+if path.exists('config/config.yml'):
+    with open('config/config.yml', 'r') as config_file:
         try:
             config = yaml.safe_load(config_file)
             user = config['user']
