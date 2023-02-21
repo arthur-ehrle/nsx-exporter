@@ -1,6 +1,9 @@
 # NSX-exporter
 An open-source prometheus exporter for nsx-T 3.x.x
 
+# Docker
+Link to the docker image https://hub.docker.com/r/aehr/nsxv3-exporter
+
 # Utilisation
 Exporter is exposing metrics at : http://localhost:PortNumber/
 You can change the port in the YAML file.
