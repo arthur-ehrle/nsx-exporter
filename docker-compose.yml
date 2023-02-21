@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  nsxv3-exporter:
+    container_name: nsxv3-exporter
+    image: aehr/nsxv3-exporter:1.0
+    network_mode: host
+    restart: always
+    volumes:
+      - ./nsx-exporter/:/app/config/:ro
