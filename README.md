@@ -16,17 +16,17 @@ scrape_frequency: 1 \
 user : "login" \
 password : "password!" \
 label : "NSXv3" \
-url_list : \
+url_list : 
   - link : "https://Target_IP" \
     name : "" \
-check_list: \
+check_list: 
   - link : "https://Target_IP/policy/api/v1/infra/segments/" \
     name : "segment_down" \
     regex_word : "admin_state" \
-    word: "DOWN" \
+    word: "DOWN" 
   - link : "https://Target_IP/policy/api/v1/infra/tier-0s/" \
     name : "tiers0_UP" \
     regex_word : "connectivity" \
-    word: "OFF" \
+    word: "OFF" 
 
 
