@@ -13,6 +13,7 @@ url_name = []
 ListStateToCheck=[]
 NameToCheck=[]
 WordToCheck=[]
+RegexWord=[]
 if path.exists('config/config.yml'):
     with open('config/config.yml', 'r') as config_file:
         try:
@@ -26,6 +27,7 @@ if path.exists('config/config.yml'):
                 ListStateToCheck.append(URL['link'])
                 NameToCheck.append(URL['name'])
                 WordToCheck.append(URL['word'])
+                RegexWord.append(URL['regex_word'])
         except yaml.YAMLError as error:
             print(error)
 
@@ -45,22 +47,26 @@ def result_count_request():
     return data_list, url_list, url_name
 
 def connectivity_state():
+   
     ValueList = []
     NameList = []
+    render=[]
+    renderAggreg=[]
     for URL in ListStateToCheck:
         index = ListStateToCheck.index(URL)
         word=WordToCheck[index]
         data = request_agent(URL)
-        ValueList=nested_lookup("admin_state", data)
+        ValueList=nested_lookup(RegexWord[index], data)
         NameList = nested_lookup('display_name', data)
-    render = match_name_state(ValueList,NameList,word)
-    return render
+        render = match_name_state(ValueList,NameList,word,NameToCheck[index]) 
+        renderAggreg.append(render)
+    return renderAggreg
 
-def match_name_state(list1,list2,word):
+def match_name_state(list1,list2,word,name):
     render=[]
     for element in list1:
         index = list1.index(element)
         if element == word:
             render.append(list2[index])
-    return render,NameToCheck
+    return render,name
 

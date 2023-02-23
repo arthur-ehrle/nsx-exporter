@@ -22,16 +22,15 @@ class match_request(object):
     def __init__(self):
         pass
     def collect(self):
-        try:
-            MatchList,NameInList = api.connectivity_state()
+       renderAggreg=api.connectivity_state()
+       for MatchList,NameInList in renderAggreg:
             for siteDown in MatchList:
                 index = MatchList.index(siteDown)
-                gauge = GaugeMetricFamily(f"{label}_{NameInList[index]}", f"{label}_{NameInList[index]}", labels=[f"{NameInList[index]}"])
+                gauge = GaugeMetricFamily(f"{label}_{NameInList}", f"{label}_{NameInList}", labels=[f"{NameInList}"])
                 val = 1
                 gauge.add_metric([f'{siteDown}'], val)
                 yield gauge
-        except:
-            pass
+        
             
 if __name__ == "__main__":
     if path.exists('config/config.yml'):
