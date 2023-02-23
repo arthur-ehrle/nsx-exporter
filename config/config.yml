@@ -4,5 +4,9 @@ user : "login"
 password : "password!"
 label : "NSXv3"
 url_list : 
-  - link : "https://ip"
-    name : "metric_name"
+  - link : "https://op-nsx-manager-dcf1.oncloud.host"
+    name : ""
+check_list:
+  - link : "https://op-nsx-manager-dcf1.oncloud.host"
+    name : ""
+    word: "DOWN"

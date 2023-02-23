@@ -5,10 +5,14 @@ from requests.auth import HTTPBasicAuth
 from urllib3.exceptions import InsecureRequestWarning
 from os import path
 import yaml
+from nested_lookup import nested_lookup
 
 # doc for API url : https://developer.vmware.com/apis/1083/nsx-t
 url_list=[]
 url_name = []
+ListStateToCheck=[]
+NameToCheck=[]
+WordToCheck=[]
 if path.exists('config/config.yml'):
     with open('config/config.yml', 'r') as config_file:
         try:
@@ -18,6 +22,10 @@ if path.exists('config/config.yml'):
             for URL in config['url_list']:
                 url_list.append(URL['link'])
                 url_name.append(URL['name'])
+            for URL in config['check_list']:
+                ListStateToCheck.append(URL['link'])
+                NameToCheck.append(URL['name'])
+                WordToCheck.append(URL['word'])
         except yaml.YAMLError as error:
             print(error)
 
@@ -35,4 +43,24 @@ def result_count_request():
         data = request_agent(URL)
         data_list.append(data['result_count'])
     return data_list, url_list, url_name
+
+def connectivity_state():
+    ValueList = []
+    NameList = []
+    for URL in ListStateToCheck:
+        index = ListStateToCheck.index(URL)
+        word=WordToCheck[index]
+        data = request_agent(URL)
+        ValueList=nested_lookup("admin_state", data)
+        NameList = nested_lookup('display_name', data)
+    render = match_name_state(ValueList,NameList,word)
+    return render
+
+def match_name_state(list1,list2,word):
+    render=[]
+    for element in list1:
+        index = list1.index(element)
+        if element == word:
+            render.append(list2[index])
+    return render,NameToCheck
 
