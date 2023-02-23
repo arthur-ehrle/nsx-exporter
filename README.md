@@ -13,13 +13,20 @@ There is some metrics about the python process itslef, but the most importants m
 
 port: 7789
 scrape_frequency: 1
-user : ""
-password : ""
+user : "login"
+password : "password!"
 label : "NSXv3"
 url_list : 
-  - link : "https://op-nsx-manager-dcf1.oncloud.host"
+  - link : "https://Target_IP"
     name : ""
 check_list:
-  - link : "https://op-nsx-manager-dcf1.oncloud.host"
-    name : ""
+  - link : "https://Target_IP/policy/api/v1/infra/segments/"
+    name : "segment_down"
+    regex_word : "admin_state"
     word: "DOWN"
+  - link : "https://Target_IP/policy/api/v1/infra/tier-0s/"
+    name : "tiers0_UP"
+    regex_word : "connectivity"
+    word: "OFF"
+
+
