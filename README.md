@@ -19,6 +19,7 @@ label : "NSXv3" \
 url_list : 
   - link : "https://Target_IP" \
     name : "" \
+    
 check_list: 
   - link : "https://Target_IP/policy/api/v1/infra/segments/" \
     name : "segment_down" \
