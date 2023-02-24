@@ -21,7 +21,7 @@ url_list :
   - link : "/api/v1/logical-routers" \
     name : "logical_routers" 
   - link : "/api/v1/vpn/ipsec/dpd-profiles" \
-    name : "dpd_profiles" \
+    name : "dpd_profiles" 
   - link : "/policy/api/v1/infra/tier-1s" \
     name : "tier1_number" 
   - link : "/api/v1/edge-clusters" \
