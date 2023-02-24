@@ -21,6 +21,6 @@ check_list:
     regex_word : "admin_state"
     word: "DOWN"
   - link : "/policy/api/v1/infra/tier-0s/"
-    name : "tiers0_UP"
+    name : "tiers0_DOWN"
     regex_word : "connectivity"
     word: "OFF"
