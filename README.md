@@ -16,18 +16,26 @@ scrape_frequency: 1 \
 user : "login" \
 password : "password!" \
 label : "NSXv3" \
+target : "https://NSX-Manager-IP:port" \
 url_list : 
-  - link : "https://Target_IP" \
-    name : "" 
-    
-check_list: 
-  - link : "https://Target_IP/policy/api/v1/infra/segments/" \
+  - link : "/api/v1/logical-routers" \
+    name : "logical_routers" 
+  - link : "/api/v1/vpn/ipsec/dpd-profiles" \
+    name : "dpd_profiles" \
+  - link : "/policy/api/v1/infra/tier-1s" \
+    name : "tier1_number" 
+  - link : "/api/v1/edge-clusters" \
+    name : "edge_clusters" 
+  - link : "/policy/api/v1/infra/tier-0s" \
+    name : "tier0_number"
+check_list:
+  - link : "/policy/api/v1/infra/segments/" \
     name : "segment_down" \
     regex_word : "admin_state" \
-    word: "DOWN" 
-  - link : "https://Target_IP/policy/api/v1/infra/tier-0s/" \
-    name : "tiers0_UP" \
+    word: "DOWN"
+  - link : "/policy/api/v1/infra/tier-0s/" \
+    name : "tiers0_DOWN" \
     regex_word : "connectivity" \
-    word: "OFF" 
+    word: "OFF"
 
 
