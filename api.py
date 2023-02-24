@@ -20,11 +20,12 @@ if path.exists('config/config.yml'):
             config = yaml.safe_load(config_file)
             user = config['user']
             password = config['password']
+            target = config['target']
             for URL in config['url_list']:
-                url_list.append(URL['link'])
+                url_list.append(target+URL['link'])
                 url_name.append(URL['name'])
             for URL in config['check_list']:
-                ListStateToCheck.append(URL['link'])
+                ListStateToCheck.append(target+URL['link'])
                 NameToCheck.append(URL['name'])
                 WordToCheck.append(URL['word'])
                 RegexWord.append(URL['regex_word'])
