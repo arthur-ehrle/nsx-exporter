@@ -27,7 +27,7 @@ url_list :
   - link : "/api/v1/edge-clusters" \
     name : "edge_clusters" 
   - link : "/policy/api/v1/infra/tier-0s" \
-    name : "tier0_number"
+    name : "tier0_number" \
 check_list:
   - link : "/policy/api/v1/infra/segments/" \
     name : "segment_down" \
