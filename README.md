@@ -9,7 +9,7 @@ Exporter is exposing metrics at : http://localhost:PortNumber/
 You can change the port in the YAML file.
 There is some metrics about the python process itslef, but the most importants metrics are tagged by "NSXv3" at the begining.
 
-# Config.yml
+# config.yml
 
 port: 7789 \
 scrape_frequency: 1 \
