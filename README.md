@@ -39,4 +39,7 @@ check_list:
     regex_word : "connectivity" \
     word: "OFF"
 
+# Debugging
+
+To solve any issue, be carreful if you need to adapt your MTU due to TLS. You can also use a docker image with the tag ":debug" that will be more verbose.
 
