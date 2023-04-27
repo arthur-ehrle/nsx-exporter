@@ -8,6 +8,9 @@ Link to the docker image https://hub.docker.com/r/aehr/nsxv3-exporter
 Exporter is exposing metrics at : http://localhost:PortNumber/
 You can change the port in the YAML file.
 There is some metrics about the python process itslef, but the most importants metrics are tagged by "NSXv3" at the begining.
+You can add other urls that you will want to monitor by following the links given by VMWare at "https://developer.vmware.com/apis/1083/nsx-t".
+The "url_list" of the config file is used to provide a list of API url that return a field "resulat_count" with a value.
+The "check_list" is used to find a value near a desired field in an API result.
 
 # config.yml
 
